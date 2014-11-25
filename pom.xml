@@ -6,7 +6,7 @@
     <artifactId>jackson-parent</artifactId>
     <version>2.4.1</version>
   </parent>
-  <groupId>com.fasterxml.jackson.module</groupId>
+  <groupId>com.livingobjects.thirdparty.jackson</groupId>
   <artifactId>jackson-module-parameter-names</artifactId>
   <name>Jackson-module-parameter-names</name>
   <version>2.4.3</version>
@@ -31,23 +31,23 @@ introspection of method/constructor parameter names, without having to add expli
   </scm>
   <properties>
     <version.jackson.core>2.4.3</version.jackson.core>
+    <basepackage>com.fasterxml.jackson.module</basepackage>
     <!-- explicitly target JDK 8 -->
     <javac.src.version>1.8</javac.src.version>
     <javac.target.version>1.8</javac.target.version>
     <!-- Generate PackageVersion.java into this directory. -->
     <packageVersion.dir>com/fasterxml/jackson/module/paramnames</packageVersion.dir>
-    <packageVersion.package>${project.groupId}.paramnames</packageVersion.package>
+    <packageVersion.package>${basepackage}.paramnames</packageVersion.package>
 
     <!-- Configuration properties for the OSGi maven-bundle-plugin -->
     <osgi.import>com.fasterxml.jackson.core
-,com.fasterxml.jackson.core
 ,com.fasterxml.jackson.core.json
 ,com.fasterxml.jackson.core.util
 ,com.fasterxml.jackson.databind
 ,com.fasterxml.jackson.databind.introspect
 ,com.fasterxml.jackson.databind.module
     </osgi.import>
-    <osgi.export>${project.groupId}.paramnames.*;version=${project.version}
+    <osgi.export>${basepackage}.paramnames.*;version=${project.version}
 </osgi.export>
   </properties>
 
